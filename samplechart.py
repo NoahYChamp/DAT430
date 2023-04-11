@@ -10,6 +10,7 @@ Original file is located at
 import numpy as np
 import pandas as pd
 import altair as alt
+import streamlit as st
 
 Low = 100
 High = 100000
@@ -23,9 +24,11 @@ model = pd.DataFrame({'x': x.ravel(),
                      'y': y.ravel(),
                      'z': z.ravel()})
 
-alt.Chart(model).mark_rect().encode(
+Chart = alt.Chart(model).mark_rect().encode(
     x='x:O',
     y='y:O',
     color='z:Q',
     tooltip='z:Q'
 )
+
+st.altair_chart(Chart, use_container_width=True)
