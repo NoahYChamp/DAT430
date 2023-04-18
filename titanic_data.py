@@ -24,7 +24,7 @@ with col1:
       alt.X('Age:Q', bin=True),
       y='count()'
   )
-  st.altair(hist_age)
+  st.altair_chart(hist_age)
 
 with col2:
 #chart 2
@@ -34,7 +34,7 @@ with col2:
       color = 'Survived',
       tooltip = ['Age', 'Fare', 'Survived', 'Name']
   )
-  st.altair(scatter)
+  st.altair_chart(scatter)
 
 with col3:
 #chart 3
@@ -42,4 +42,4 @@ with col3:
       alt.X('Fare:Q', bin=True),
       y='count()'
   ).interactive()
-  st.altair(hist_fare)
+  st.altair_chart(hist_fare)
