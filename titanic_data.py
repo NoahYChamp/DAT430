@@ -22,7 +22,7 @@ with col1:
 #chart 1
   hist_age = alt.Chart(data).mark_bar().encode(
       alt.X('Age:Q', bin=True),
-      y='count'
+      y='count()'
   )
   st.altair(hist_age)
 
@@ -40,6 +40,6 @@ with col3:
 #chart 3
   hist_fare = alt.Chart(data).mark_bar().encode(
       alt.X('Fare:Q', bin=True),
-      y='count'
+      y='count()'
   ).interactive()
   st.altair(hist_fare)
