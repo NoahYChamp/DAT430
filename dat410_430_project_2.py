@@ -16,7 +16,9 @@ import streamlit as st
 
 st.title('Project 2')
 st.header('This is the Streamlit for Project 2')
+
 st.sidebar.write("Sidebar text goes here. Lorem ipsum and all that.")
+st.sidebar.button('This is a button.')
 
 #column setter
 col1, col2 = st.columns(2)
