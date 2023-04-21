@@ -14,15 +14,13 @@ import streamlit as st
 
 #data = pd.read_csv('/content/motor_vehicle_data.csv')
 
-
+st.title('Project 2')
 st.sidebar.write("Sidebar text goes here. Lorem ipsum and all that.")
+
+#column setter
 col1, col2 = st.columns(2)
 
-
 #sample data
-
-
-
 Low = 100
 High = 100000
 
