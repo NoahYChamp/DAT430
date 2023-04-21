@@ -15,6 +15,7 @@ import streamlit as st
 #data = pd.read_csv('/content/motor_vehicle_data.csv')
 
 st.title('Project 2')
+st.header('This is the Streamlit for Project 2')
 st.sidebar.write("Sidebar text goes here. Lorem ipsum and all that.")
 
 #column setter
