@@ -42,6 +42,8 @@ with col1:
       y='y:O',
       color='y:Q',
       tooltip='z:Q'
+  ).properties(
+      title='Chart 1'
   )
 
   st.altair_chart(Chart1, use_container_width=True)
