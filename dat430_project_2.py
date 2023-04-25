@@ -3,7 +3,7 @@ import numpy as np
 import altair as alt
 import streamlit as st
 
-data = pd.read_csv('/motor_vehicle_data.csv')
+data = pd.read_csv('https://raw.githubusercontent.com/NoahYChamp/DAT430/main/motor_vehicle_data.csv')
 
 st.title('Project 2')
 st.header('This is the Streamlit for DAT430 Project 2')
