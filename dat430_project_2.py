@@ -48,5 +48,5 @@ with col2:
       st.write('You selected Chart1.')
   elif chartnum == 'Chart2':
       st.write('You pressed Chart2. Nothing happened.')
-  elif chartnum == 'Chart2':
+  elif chartnum == 'Chart3':
       st.write("None of these buttons work sadly. I am lowkey malding rn.")
