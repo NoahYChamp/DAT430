@@ -32,7 +32,7 @@ with col1:
   st.altair_chart(stacked_fatalities_chart, use_container_width=True)
 
 with col2:
-  registered_drivers_per_fatality = alt.Chart(data).mark_bar().encode(
+  registered_drivers_per_fatality = alt.Chart(data).mark_bar(color='red').encode(
       x='Year',
       y='Fatalities per 100,000 Licensed Drivers'
   )
