@@ -5,8 +5,12 @@ import streamlit as st
 
 data = pd.read_csv('https://raw.githubusercontent.com/NoahYChamp/DAT430/main/motor_vehicle_data.csv')
 
-st.title('Project 2')
-st.header('This is the Streamlit for DAT430 Project 2')
+st.title('DAT430 Project 2 Streamlit')
+st.write('By Noah Youngren.')
+
+st.write('This is a description of your fundamental research question and its context.')
+
+st.header('Header')
 
 st.sidebar.write("Sidebar text goes here. Lorem ipsum and all that.")
 st.sidebar.button('This is a button.')
@@ -28,16 +32,13 @@ model = pd.DataFrame({'x': x.ravel(),
                      'z': z.ravel()})
 
 with col1:
-  Chart1 = alt.Chart(model).mark_rect().encode(
-      x='x:O',
-      y='y:O',
-      color='y:Q',
-      tooltip='z:Q'
-  ).properties(
-      title='Chart 1'
-  )
+fatal_crashes_over_time = alt.Chart(data).mark_bar().encode(
+    x='Year',
+    y='Fatal Crashes'
+)
 
-  st.altair_chart(Chart1, use_container_width=True)
+st.altair_chart(fatal_crashes_over_time)
+
   
   Chart2 = alt.Chart(model).mark_rect().encode(
       x='x:O',
