@@ -54,8 +54,7 @@ def fatalities_by_position_chart():
       y='Fatalities',
       color='Occupant Type'
     )
-
-    return chart
+  return chart
 
 def main():
     st.sidebar.title('Navigation')
