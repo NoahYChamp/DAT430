@@ -26,7 +26,8 @@ with col1:
   fatalities_data = pd.melt(fatalities_data, id_vars=['Year'], var_name='Occupant Type', value_name='Fatalities')
   stacked_fatalities_chart = alt.Chart(fatalities_data).mark_bar().encode(
       x='Year',
-      y='Fatalities'
+      y='Fatalities',
+      color='Occupant Type'
   )
   st.altair_chart(stacked_fatalities_chart, use_container_width=True)
 
