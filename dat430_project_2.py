@@ -32,12 +32,12 @@ with col1:
   st.altair_chart(stacked_fatalities_chart, use_container_width=True)
 
 with col2:
-  fatalities_data = data[['Motorcyclist Fatalities', 'Pedestrian Fatalities', 'Pedacyclist Fatalities', 'Other/Unknown Fatalities']].sum().reset_index()
-  fatalities_data.columns = ['Occupant Type', 'Fatalities']
-  bar_chart = alt.Chart(fatalities_data).mark_bar().encode(
+  non_occu = data[['Motorcyclist Fatalities', 'Pedestrian Fatalities', 'Pedacyclist Fatalities', 'Other/Unknown Fatalities']].sum().reset_index()
+  non_occu.columns = ['Occupant Type', 'Fatalities']
+  no_bar_chart = alt.Chart(non_occu).mark_bar().encode(
       x='Occupant Type',
       y='Fatalities',
       color='Occupant Type'
   )
-  st.altair_chart(bar_chart, use_container_width=True)
+  st.altair_chart(no_bar_chart, use_container_width=True)
 
