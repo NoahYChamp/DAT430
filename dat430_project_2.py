@@ -9,31 +9,25 @@ st.title('DAT430 Project 2 Streamlit')
 st.write('By Noah Youngren.')
 st.write('Fundamental Research Question: Has the amount of motor vehicle crash fatalities increased or decreased over time? Which groups are most affected?')
 
-def fatalities_over_time():
-    st.header('Total Fatalities by Year')
-    chart = alt.Chart(data).mark_line().encode(
-        x='Year',
-        y='Total Fatalities'
-    )
-    return chart
+#st.sidebar.write("Sidebar text goes here. Lorem ipsum and all that.")
+#st.sidebar.button('This is a button.')
 
-def fatalities_by_position():
+#column setter
+col1, col2 = st.columns(2)
+
+with col1:
+  fatal_crashes_over_time = alt.Chart(data).mark_bar().encode(
+      x='Year',
+      y='Fatal Crashes'
+  )
+  st.altair_chart(fatal_crashes_over_time)
+  
   fatalities_data = data.groupby('Year')[['Driver Fatalities', 'Passenger Fatalities', 'Unknown Occupant Fatalities']].sum().reset_index()
   fatalities_data = pd.melt(fatalities_data, id_vars=['Year'], var_name='Occupant Type', value_name='Fatalities')
-
-  chart = alt.Chart(fatalities_data).mark_bar().encode(
+  stacked_fatalities_chart = alt.Chart(fatalities_data).mark_bar().encode(
       x='Year',
       y='Fatalities',
       color='Occupant Type'
-    )
-  return chart
+  )
 
-chartnum = st.radio(
-    'Select chart:',
-    ('Chart1', 'Chart2', 'Chart3'))
-if chartnum == 'Chart1':
-    chart = fatalities_over_time()
-    st.altair_chart(chart, use_container_width=True)
-elif chartnum == 'Chart2':
-    chart = fatalities_by_position()
-    st.altair_chart(chart, use_container_width=True)
+  st.altair_chart(stacked_fatalities_chart, use_container_width=True)
