@@ -35,6 +35,6 @@ chartnum = st.radio(
 if chartnum == 'Chart1':
     chart = fatalities_over_time()
     st.altair_chart(chart, use_container_width=True)
-elif chartnum == 'Chart2:
+elif chartnum == 'Chart2':
     chart = fatalities_by_position()
     st.altair_chart(chart, use_container_width=True)
