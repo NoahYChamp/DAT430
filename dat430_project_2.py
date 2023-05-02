@@ -32,12 +32,8 @@ with col1:
   st.altair_chart(stacked_fatalities_chart, use_container_width=True)
 
 with col2:
-  non_occu = data[['Motorcyclist Fatalities', 'Pedestrian Fatalities', 'Pedacyclist Fatalities', 'Other/Unknown Fatalities']].sum().reset_index()
-  non_occu.columns = ['Occupant Type', 'Fatalities']
-  no_bar_chart = alt.Chart(non_occu).mark_bar().encode(
-      x='Occupant Type',
-      y='Fatalities',
-      color='Occupant Type'
+  registered_drivers_per_fatality = alt.Chart(data).mark_bar().encode(
+      x='Year',
+      y='Fatalities per 100,000 Licensed Drivers'
   )
-  st.altair_chart(no_bar_chart, use_container_width=True)
-
+  st.altair_chart(registered_drivers_per_fatality)
