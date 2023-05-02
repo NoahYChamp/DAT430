@@ -39,7 +39,6 @@ with col1:
   )
 
   st.altair_chart(fatal_crashes_over_time)
-
   
   Chart2 = alt.Chart(model).mark_rect().encode(
       x='x:O',
