@@ -34,6 +34,7 @@ with col1:
 with col2:
   registered_drivers_per_fatality = alt.Chart(data).mark_bar(color='red').encode(
       x='Year',
-      y='Fatalities per 100,000 Licensed Drivers'
+      y='Fatalities per 100,000 Licensed Drivers',
+      tooltip=['Total Overall Fatalities', 'Fatal Crashes']
   )
   st.altair_chart(registered_drivers_per_fatality)
