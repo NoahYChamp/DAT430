@@ -28,6 +28,6 @@ with col1:
   stacked_fatalities_chart = alt.Chart(fatalities_data).mark_bar().encode(
       x='Year',
       y='Fatalities',
-      color=alt.Color('Occupant Type', scale=alt.Scale(domain=list(occu_colors.keys()), range=list(color_mapping.values())))
+      color=occu_colors
   )
   st.altair_chart(stacked_fatalities_chart, use_container_width=True)
