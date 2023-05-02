@@ -43,8 +43,18 @@ def navigation_menu():
     selection = st.sidebar.radio('Select a chart:', options)
 
     return selection
-  
-  
+ def fatalities_by_position_chart():
+    fatalities_data = data.groupby('Year')[['Driver Fatalities', 'Passenger Fatalities', 'Unknown Occupant Fatalities']].sum().reset_index()
+    fatalities_data = pd.melt(fatalities_data, id_vars=['Year'], var_name='Occupant Type', value_name='Fatalities')
+
+    chart = alt.Chart(fatalities_data).mark_bar().encode(
+        x='Year',
+        y='Fatalities',
+        color='Occupant Type'
+    )
+
+    return chart
+
 def main():
     st.sidebar.title('Navigation')
     selection = navigation_menu()
@@ -58,17 +68,5 @@ def main():
 
     elif selection == 'Another Chart':
         pass
-        
- def fatalities_by_position_chart():
-    fatalities_data = data.groupby('Year')[['Driver Fatalities', 'Passenger Fatalities', 'Unknown Occupant Fatalities']].sum().reset_index()
-    fatalities_data = pd.melt(fatalities_data, id_vars=['Year'], var_name='Occupant Type', value_name='Fatalities')
-
-    chart = alt.Chart(fatalities_data).mark_bar().encode(
-        x='Year',
-        y='Fatalities',
-        color='Occupant Type'
-    )
-
-    return chart
 
  main()
