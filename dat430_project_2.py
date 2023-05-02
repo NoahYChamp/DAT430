@@ -32,12 +32,12 @@ model = pd.DataFrame({'x': x.ravel(),
                      'z': z.ravel()})
 
 with col1:
-fatal_crashes_over_time = alt.Chart(data).mark_bar().encode(
+  fatal_crashes_over_time = alt.Chart(data).mark_bar().encode(
     x='Year',
     y='Fatal Crashes'
 )
 
-st.altair_chart(fatal_crashes_over_time)
+  st.altair_chart(fatal_crashes_over_time)
 
   
   Chart2 = alt.Chart(model).mark_rect().encode(
