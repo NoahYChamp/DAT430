@@ -6,10 +6,10 @@ import streamlit as st
 data = pd.read_csv('https://raw.githubusercontent.com/NoahYChamp/DAT430/main/motor_vehicle_data.csv')
 data['Year'] = data['Year'].astype(str).str.replace(',', '')
 
-'''
 st.title('DAT430 Project 2 Streamlit')
 st.write('By Noah Youngren.')
 
+'''
 st.write('This is a description of your fundamental research question and its context.')
 
 st.header('Header')
@@ -70,4 +70,4 @@ def main():
     elif selection == 'Another Chart':
         pass
 
- main()
+main()
