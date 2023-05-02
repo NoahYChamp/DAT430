@@ -26,6 +26,7 @@ with col1:
   )
   st.altair_chart(fatal_crashes_over_time)
   
+with col2:
   fatalities_data = data.groupby('Year')[['Driver Fatalities', 'Passenger Fatalities', 'Unknown Occupant Fatalities']].sum().reset_index()
   fatalities_data = pd.melt(fatalities_data, id_vars=['Year'], var_name='Occupant Type', value_name='Fatalities')
   stacked_bar_chart = alt.Chart(fatalities_data).mark_bar().encode(
