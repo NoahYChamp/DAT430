@@ -32,12 +32,12 @@ model = pd.DataFrame({'x': x.ravel(),
                      'z': z.ravel()})
 
 with col1:
-  fatal_crashes_over_time = alt.Chart(data).mark_bar().encode(
-    x='Year',
-    y='Fatal Crashes'
-)
-
-  st.altair_chart(fatal_crashes_over_time)
+  chart1 = alt.Chart(data).mark_bar().encode(
+              x=alt.X('Year:O', axis=alt.Axis(format='')),
+              y='Fatal Crashes',
+              tooltip=['Year', 'Driver Fatalities', 'Passenger Fatalities', 'Unknown Fatalities']
+          ).interactive()
+  st.altair_chart(chart1, use_container_width=True)
 
   
   Chart2 = alt.Chart(model).mark_rect().encode(
