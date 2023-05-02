@@ -29,10 +29,10 @@ with col1:
 with col2:
   fatalities_data = data.groupby('Year')[['Driver Fatalities', 'Passenger Fatalities', 'Unknown Occupant Fatalities']].sum().reset_index()
   fatalities_data = pd.melt(fatalities_data, id_vars=['Year'], var_name='Occupant Type', value_name='Fatalities')
-  stacked_bar_chart = alt.Chart(fatalities_data).mark_bar().encode(
+  stacked_fatalities_chart = alt.Chart(fatalities_data).mark_bar().encode(
       x='Year',
       y='Fatalities',
       color='Occupant Type'
   )
 
-  st.altair_chart(stacked_bar_chart.properties(legend=alt.Legend(title=""), width=700, height=400))  
+  st.altair_chart(stacked_fatalities_chart, use_container_width=True)
