@@ -54,10 +54,10 @@ def main():
         st.altair_chart(chart, use_container_width=True)
 
     elif selection == 'Your Next Chart':
-        # call function to display your next chart here
+        pass
 
     elif selection == 'Another Chart':
-        # call function to display another chart here
+        pass
         
  def fatalities_by_position_chart():
     fatalities_data = data.groupby('Year')[['Driver Fatalities', 'Passenger Fatalities', 'Unknown Occupant Fatalities']].sum().reset_index()
