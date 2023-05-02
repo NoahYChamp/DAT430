@@ -38,31 +38,3 @@ with col1:
       y='Fatal Crashes'
   )
   st.altair_chart(fatal_crashes_over_time)
-  
-  Chart2 = alt.Chart(model).mark_rect().encode(
-      x='x:O',
-      y='y:O',
-      color='y:Q',
-      tooltip='z:Q'
-  )
-
-  st.altair_chart(Chart2, use_container_width=True)
-
-with col2:
-  Chart3 = alt.Chart(model).mark_rect().encode(
-      x='x:O',
-      y='y:O',
-      color='y:Q',
-      tooltip='z:Q'
-  )
-
-  st.altair_chart(Chart3, use_container_width=True)
-
-  Chart4 = alt.Chart(model).mark_rect().encode(
-      x='x:O',
-      y='y:O',
-      color='y:Q',
-      tooltip='z:Q'
-  )
-
-  st.altair_chart(Chart4, use_container_width=True)
