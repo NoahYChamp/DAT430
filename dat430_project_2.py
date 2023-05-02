@@ -33,7 +33,7 @@ model = pd.DataFrame({'x': x.ravel(),
                      'z': z.ravel()})
 
 with col1:
-   fatal_crashes_over_time = alt.Chart(data).mark_bar().encode(
+  fatal_crashes_over_time = alt.Chart(data).mark_bar().encode(
       x='Year',
       y='Fatal Crashes'
   )
