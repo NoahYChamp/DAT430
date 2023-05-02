@@ -4,6 +4,7 @@ import altair as alt
 import streamlit as st
 
 data = pd.read_csv('https://raw.githubusercontent.com/NoahYChamp/DAT430/main/motor_vehicle_data.csv')
+data['Year'] = data['Year'].astype(str)
 
 st.title('DAT430 Project 2 Streamlit')
 st.write('By Noah Youngren.')
