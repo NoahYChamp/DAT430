@@ -24,10 +24,10 @@ with col1:
   
   fatalities_data = data.groupby('Year')[['Driver Fatalities', 'Passenger Fatalities', 'Unknown Occupant Fatalities']].sum().reset_index()
   fatalities_data = pd.melt(fatalities_data, id_vars=['Year'], var_name='Occupant Type', value_name='Fatalities')
+  occu_colors = {'Driver Fatalities': 'green', 'Passenger Fatalities': 'red', 'Unknown Occupant Fatalities': 'purple'}
   stacked_fatalities_chart = alt.Chart(fatalities_data).mark_bar().encode(
       x='Year',
       y='Fatalities',
-      color='Occupant Type'
+      color=alt.Color('Occupant Type', scale=alt.Scale(domain=list(occu_colors.keys()), range=list(color_mapping.values())))
   )
-
   st.altair_chart(stacked_fatalities_chart, use_container_width=True)
