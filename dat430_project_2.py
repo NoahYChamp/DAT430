@@ -39,3 +39,12 @@ with col2:
       tooltip=['Total Overall Fatalities', 'Fatal Crashes']
   )
   st.altair_chart(registered_drivers_per_fatality)
+  
+  
+  chartnum = st.radio(
+  'Select chart:',
+      ('Chart1', 'Chart2', 'Chart3'))
+  if chartnum == 'Chart1':
+      st.write('You selected Chart1. Nothing happened.')
+  else:
+      st.write("None of these buttons work sadly. I am lowkey malding rn.")
