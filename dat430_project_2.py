@@ -35,5 +35,4 @@ with col2:
       color='Occupant Type'
   )
 
-  st.altair_chart(stacked_bar_chart, use_container_width=True)
-  
+  st.altair_chart(stacked_bar_chart.properties(legend=alt.Legend(title=""), width=700, height=400))  
