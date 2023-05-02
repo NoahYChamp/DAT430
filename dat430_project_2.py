@@ -4,6 +4,7 @@ import altair as alt
 import streamlit as st
 
 data = pd.read_csv('https://raw.githubusercontent.com/NoahYChamp/DAT430/main/motor_vehicle_data.csv')
+data['Year'] = data['Year'].astype(str).str.replace(',', '')
 
 st.title('DAT430 Project 2 Streamlit')
 st.write('By Noah Youngren.')
@@ -33,7 +34,7 @@ model = pd.DataFrame({'x': x.ravel(),
 
 with col1:
   chart1 = alt.Chart(data).mark_bar().encode(
-              x=alt.X('Year:O', axis=alt.Axis(format='')),
+              x=alt.X('Year', axis=alt.Axis(format='')),
               y='Fatal Crashes',
               tooltip=['Driver Fatalities', 'Passenger Fatalities', 'Unknown Fatalities']
           ).interactive()
