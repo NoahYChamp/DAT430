@@ -30,13 +30,3 @@ with col1:
   )
   st.altair_chart(stacked_fatalities_chart, use_container_width=True)
 
-with col2:
-  non_occupant_data = data[['Year', 'Motorcyclists', 'Pedestrian Fatalities', 'Pedacyclist Fatalities', 'Other / Unknown Fatalities']]
-  non_occupant_data = non_occupant_data.groupby('Year').sum().reset_index()
-  non_occupant_data = pd.melt(non_occupant_data, id_vars=['Year'], var_name='Fatalities Type', value_name='Fatalities')
-  line_chart = alt.Chart(non_occupant_data).mark_line().encode(
-      x='Year',
-      y='Fatalities',
-      color='Fatalities Type'
-  )
-  st.altair_chart(line_chart, use_container_width=True)
