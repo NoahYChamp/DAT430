@@ -31,8 +31,11 @@ def main():
 
     elif selection == 'Another Chart':
         pass
+    elif selection == 'Another Chart':
+        pass
 
 def fatalities_over_time():
+    st.header('Total Fatalities by Year')
     chart = alt.Chart(data).mark_line().encode(
         x='Year',
         y='Total Fatalities'
