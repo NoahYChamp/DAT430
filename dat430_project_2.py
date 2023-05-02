@@ -35,7 +35,7 @@ with col1:
   chart1 = alt.Chart(data).mark_bar().encode(
               x=alt.X('Year:O', axis=alt.Axis(format='')),
               y='Fatal Crashes',
-              tooltip=['Year', 'Driver Fatalities', 'Passenger Fatalities', 'Unknown Fatalities']
+              tooltip=['Driver Fatalities', 'Passenger Fatalities', 'Unknown Fatalities']
           ).interactive()
   st.altair_chart(chart1, use_container_width=True)
 
