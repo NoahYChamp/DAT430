@@ -30,8 +30,8 @@ def fatalities_by_position():
   return chart
 
 chartnum = st.radio(
-“Select chart:,
-    (‘Chart’1, ‘Chart2’, ‘Chart3’))
+    'Select chart:',
+    ('Chart1', 'Chart2', 'Chart3'))
 if chartnum == 'Chart1':
     chart = fatalities_over_time()
     st.altair_chart(chart, use_container_width=True)
