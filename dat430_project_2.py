@@ -43,10 +43,10 @@ with col2:
   
   chartnum = st.radio(
   'Select chart:',
-      ('Chart1', 'Chart2', 'Chart3'))
-  if chartnum == 'Chart1':
-      st.write('You selected Chart1.')
-  elif chartnum == 'Chart2':
-      st.write('You pressed Chart2. Nothing happened.')
-  elif chartnum == 'Chart3':
-      st.write("None of these buttons work sadly. I am lowkey malding rn.")
+      ('Fatal Crashes Findings', 'Occupant Fatalities Findings', 'Per Registered Driver Findings'))
+  if chartnum == 'Fatal Crashes Findings':
+      st.write('The number of fatal crashes remains relatively the same, but beginning at 2007 takes a notable downturn for about 5 years. This coincides with the Great Recession.')
+  elif chartnum == 'Occupant Fatalities Findings':
+      st.write('Drivers make up the majority of vehicular occupant fatalities, but this chart also notes a drop in deaths, beginning close to 2007 as well. However, the drop in passenger fatalities is not proportionate to the drop in driver deaths. This may suggest more people drove alone in this time, or were alone when engaging in risky behavior behind the wheel. ')
+  elif chartnum == 'Per Registered Driver Findings':
+      st.write("The 2007 drop is noticeable in this graph as well. Considering that new, teenage drivers are some of the most accident-prone, this could suggest that less teenagers were behind the wheel during the recession.")
