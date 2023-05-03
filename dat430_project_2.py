@@ -42,7 +42,7 @@ with col2:
   
   
   chartnum = st.radio(
-  'Select chart:',
+  'Select chart findings:',
       ('Fatal Crashes Findings', 'Occupant Fatalities Findings', 'Per Registered Driver Findings'))
   if chartnum == 'Fatal Crashes Findings':
       st.write('The number of fatal crashes remains relatively the same, but beginning at 2007 takes a notable downturn for about 5 years. This coincides with the Great Recession.')
